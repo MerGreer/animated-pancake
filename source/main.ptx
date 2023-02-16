@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<pretext xml:lang="en-US">
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <docinfo>
     <macros>
       \newcommand{\R}{\mathbb R}
     </macros>
+
+    <latex-image-preamble>
+      \usepackage{tikz,pgfplots}
+    </latex-image-preamble>
+
+    <rename element="inlineexercise">Try it!</rename>
   </docinfo>
 
   <book xml:id="my-great-book">
@@ -49,12 +55,176 @@
       <section xml:id="section-">
         <title>A Great Section</title>
         <p>Hello</p>
+          <p>
+            Here is something <em>emphasized</em>, here is something <q>quoted</q>, and here is some inline math: <m>x^2+y^2=z^2</m>.
+          </p>
+          <p>
+            A <term>defined term</term> is one that we define.
+          </p>
+          <p>
+            And now we will define some math. But first I'd like to write enough text to span more than one line. So here is that text. And why does it run off the right side of the .ptx file?
+            
+            <me>
+f(x) = \begin{cases} 1 \amp x = 1 \\ 0 \amp x \ne 1\end{cases}\text{.} 
+            </me>
+
+            <md>
+              <mrow>\frac{dS}{dt} \amp =-\beta SI</mrow>
+              <mrow>\frac{dI}{dt} \amp =\beta SI - \gamma I</mrow>
+              <mrow>\frac{dR}{dt} \amp =\gamma I</mrow>
+            </md>
+
+            <me>
+\begin{array}{c|c|c} 
+1 \amp 2 \amp 3 \\ \hline
+4 \amp 5 \amp 6
+\end{array}
+            </me>
+          </p>
+
+          <p>
+            Here are my three favorite animals:
+            <ol>
+              <li>
+                <p>
+                  cat
+                </p>
+              </li>
+              <li>
+                <p>
+                  dog
+                </p>
+              </li>
+              <li>
+                <p>
+                  monkey
+                </p>
+              </li>
+            </ol>
+            And here are my three favorite numbers:
+            <ul>
+              <li>
+                <p>
+                  13
+                </p>
+              </li>
+              <li>
+                <p>
+                  7
+                </p>
+              </li>
+              <li>
+                <p>
+                  48
+                </p>
+              </li>
+            </ul>
+          </p>
+
+          <p>
+            Now we will try some other things
+
+            <definition xml:id="def-definition">
+              <statement>
+                <p>
+                  A <term>definition</term> is a set of words telling you what a thing is.
+                </p>
+              </statement>
+            </definition>
+          </p>
+
+          <theorem xml:id="thm-dogsarecute">
+            <title>Dogs are cute</title>
+            <statement>
+              <p>
+                All dogs are cute.
+              </p>
+            </statement>
+          </theorem>
+
+          <theorem xml:id="thm-catsarecute">
+            <title>Cats are cute</title>
+            <statement>
+              <p>
+                All cats are cute.
+              </p>
+            </statement>
+            <proof>
+              <p>
+                Meow. By Definition <xref ref="def-definition" />
+              </p>
+            </proof>
+          </theorem>
+
+          <exercise>
+            <statement>
+              <p>
+                What is the derivative of <m>f(x)=\frac{x^2+1}{x}</m>? 
+              </p>
+            </statement>
+            <hint>
+              <p>
+                Do not use the quotient rule.
+              </p>
+            </hint>
+            <answer>
+              <p>
+                <m>1-1/x^2</m>
+              </p>
+            </answer>
+            <solution>
+              <p>
+                You should get: 
+                <m>1-1/x^2</m>
+              </p>
+            </solution>
+          </exercise>
+
+          <example>
+            <statement>
+              <p>
+                Solve the inequality <m>x+2 \lt 7</m>.
+              </p>
+            </statement>
+          </example>
+
+      <figure width="75%" xml:id="fig-frog">
+      <caption>A frog</caption>
+      <image source="frog.jpg">
+        <description>A very, very cute frog</description>
+      </image>
+        
+      </figure>
+
+      <figure xml:id="figure-name">
+        <caption>A caption here</caption>
+        <image xml:id="image-name" width="50%">
+          <description>A description here </description>
+          <latex-image>
+            \begin{tikzpicture}
+              \draw[semithick,dashed] (0,0) -- (3,2);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+          
       </section>
 
     </chapter>
 
     <backmatter xml:id="backmatter">
       <title>Backmatter</title>
+
+      
+      <title>Select Answers</title>
+      <solutions inline="hint answer">
+        <title>Select hints and answers</title>
+        </solutions>
+        
+        
+      
+      
+      
 
       <colophon>
         <p> This book was authored in <pretext />. </p>
